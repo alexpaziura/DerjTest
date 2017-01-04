@@ -1,0 +1,56 @@
+.toolbars {
+    -fx-background-color: #b3daff;
+}
+.buttons {
+	-fx-background-repeat: no-repeat;
+  -fx-background-position: center;
+  -fx-background-size: 50;
+  -fx-background-radius: 50px;
+  width: 100px;
+	height: 100px;
+}
+#btnAll {
+	-fx-background-image: url('../img/Arrow-down-icon.png');
+}
+#btnKonst {
+	-fx-background-image: url('../img/Bank-icon.png');
+}
+#btnGos {
+	-fx-background-image: url('../img/User-icon.png');
+}
+#btnCorr {
+	-fx-background-image: url('../img/dollar-icon.png');
+}
+#btnOther {
+	-fx-background-image: url('../img/Files-2-icon.png');
+}
+#btnMix {
+	-fx-background-image: url('../img/Arrow-reload-4-icon.png');
+}
+#btnPrev {
+	-fx-background-image: url('../img/Arrow-previous-3-icon.png');
+}
+#btnNext {
+	-fx-background-image: url('../img/Arrow-next-3-icon.png');
+}
+#btnSearch {
+	-fx-background-image: url('../img/Zoom-icon.png');
+}
+#btnGo {
+	-fx-background-image: url('../img/Arrow-next-icon.png');
+}
+#btnAccept {
+	-fx-background-image: url('../img/Check-3-icon.png');
+}
+#btnCancel {
+	-fx-background-image: url('../img/Button-7-close-icon.png');
+}
+#btnAc {
+		-fx-background-repeat: no-repeat;
+  -fx-background-position: center;
+  -fx-background-size: 50;
+  -fx-background-radius: 50px;
+  width: 100px;
+	height: 100px;
+	-fx-background-image: url('../img/Pencil-icon.png');
+}
