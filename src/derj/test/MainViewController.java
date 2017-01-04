@@ -318,12 +318,14 @@ public class MainViewController implements Initializable {
 		listView.setOnMouseClicked(new EventHandler<MouseEvent>() {
 			@Override
 			public void handle(MouseEvent event) {
-				Pitannya tmp = listView.getSelectionModel().getSelectedItem();
-				rozdil = tmp.getRozId();
-				nom_pit = tmp.getNomPit();
-				chTab();
-				saveToHistory();
-				loadQuestion();
+				if(event.getClickCount() == 2) {
+					Pitannya tmp = listView.getSelectionModel().getSelectedItem();
+					rozdil = tmp.getRozId();
+					nom_pit = tmp.getNomPit();
+					chTab();
+					saveToHistory();
+					loadQuestion();
+				}
 			}
 		});
 		listView.getItems().clear();
