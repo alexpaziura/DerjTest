@@ -54,3 +54,6 @@
 	height: 100px;
 	-fx-background-image: url('../img/Pencil-icon.png');
 }
+#btnEdit {
+	-fx-background-image: url('../img/Pencil-icon.png');
+}

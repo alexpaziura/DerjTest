@@ -63,6 +63,10 @@ public class MainViewController implements Initializable {
 	@FXML
 	private Button btnGo;
 	@FXML
+	private Button btnEdit;
+	@FXML
+	private Button btnEditApply;
+	@FXML
 	private Button btnSearch;
 	@FXML
 	private Label LNquestion;
@@ -154,6 +158,13 @@ public class MainViewController implements Initializable {
 		Tooltip tl10 = new Tooltip();
 		tl10.setText("Пошук");
 		btnSearch.setTooltip(tl10);
+        Tooltip tl11 = new Tooltip();
+        tl11.setText("Редагувати");
+        btnEdit.setTooltip(tl11);
+        Tooltip tl12 = new Tooltip();
+        tl12.setText("Застосувати");
+        btnEditApply.setTooltip(tl12);
+		btnEditApply.setVisible(false);
 	}
 
 	public void setMainApp(MainApp mainApp) {
@@ -376,6 +387,30 @@ public class MainViewController implements Initializable {
 		loadQuestion();
 	}
 
+	@FXML
+    private void handleBtnEdit() {
+        btnEdit.setDisable(true);
+        btnEditApply.setVisible(true);
+        taQuest.setEditable(true);
+        taAnswer.setEditable(true);
+    }
+
+    @FXML
+    private void handleBtnEditApply(){
+        try {
+            statement.executeUpdate("UPDATE test SET pitanya='"+taQuest.getText()+"', vidpovid='"+taAnswer.getText()+"' "+
+            "WHERE rozdil=" + rozdil + " and nom_pitanya=" + nom_pit+";");
+            loadQuestion();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            btnEdit.setDisable(false);
+            btnEditApply.setVisible(false);
+            taQuest.setEditable(false);
+            taAnswer.setEditable(false);
+        }
+    }
+
 	private void chTab() {
 		tabpane.getSelectionModel().select(0);
 	}
@@ -524,4 +559,23 @@ public class MainViewController implements Initializable {
 	private void offclickSearch() {
 		btnSearch.setEffect(null);
 	}
+
+    @FXML
+    private void clickEdit() {
+        btnEdit.setEffect(is);
+    }
+
+    @FXML
+    private void offclickEdit() {
+        btnEdit.setEffect(null);
+    }
+    @FXML
+    private void clickEditApply() {
+        btnEditApply.setEffect(is);
+    }
+
+    @FXML
+    private void offclickEditApply() {
+        btnEditApply.setEffect(null);
+    }
 }
