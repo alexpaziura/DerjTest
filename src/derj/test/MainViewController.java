@@ -296,7 +296,7 @@ public class MainViewController implements Initializable {
 
 	@FXML
 	public void btnNextClick() {
-		if (isMix == false) {
+		if (!isMix) {
 			if (chooseKategory != 0) {
 				nom_pit++;
 				if (nom_pit > maxNom) {
@@ -366,7 +366,6 @@ public class MainViewController implements Initializable {
 			}
 
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		listView.setItems(pitObservableList);
@@ -424,7 +423,6 @@ public class MainViewController implements Initializable {
 				taAnswer.setText(rs.getString("vidpovid"));
 			}
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
