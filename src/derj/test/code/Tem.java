@@ -1,4 +1,4 @@
-package derj.test;
+package derj.test.code;
 
 public class Tem {
 

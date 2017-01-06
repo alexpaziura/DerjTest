@@ -1,4 +1,4 @@
-package derj.test;
+package derj.test.code;
 
 import java.net.URL;
 import java.sql.Connection;
@@ -7,8 +7,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
 import java.util.Random;
 import java.util.ResourceBundle;
 
@@ -17,16 +15,9 @@ import javafx.collections.ObservableList;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.geometry.Insets;
-import javafx.scene.Node;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
-import javafx.scene.control.ButtonBar.ButtonData;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Dialog;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TabPane;
@@ -35,12 +26,9 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.control.Tooltip;
 import javafx.scene.effect.InnerShadow;
-import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.GridPane;
-import javafx.util.Pair;
 
 public class MainViewController implements Initializable {
 
@@ -111,7 +99,7 @@ public class MainViewController implements Initializable {
 	public void initialize(URL location, ResourceBundle resources) {
 
 		try {
-			connection = DriverManager.getConnection("jdbc:sqlite:res/bd/question.sqlite");
+			connection = DriverManager.getConnection("jdbc:sqlite:bd/question.sqlite");
 			statement = connection.createStatement();
 			statement.setQueryTimeout(30); // set timeout to 30 sec.
 		} catch (Exception e) {

@@ -1,4 +1,4 @@
-package derj.test;
+package derj.test.code;
 
 import javafx.application.Application;
 import javafx.application.Platform;

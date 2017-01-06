@@ -1,4 +1,4 @@
-package derj.test;
+package derj.test.code;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;

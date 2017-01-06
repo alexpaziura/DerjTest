@@ -20,7 +20,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane cache="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="425.0" prefWidth="600.0" styleClass="toolbars" stylesheets="@../../../res/css/styles.css" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="derj.test.MainViewController">
+<BorderPane cache="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="425.0" prefWidth="600.0" styleClass="toolbars" stylesheets="@../css/styles.css" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="derj.test.code.MainViewController">
    <center>
       <TabPane fx:id="tabpane" prefHeight="200.0" prefWidth="200.0" styleClass="toolbars" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
         <tabs>

@@ -1,7 +1,8 @@
-package derj.test;
+package derj.test.code;
 
 import java.io.IOException;
 
+import derj.test.code.Pitannya;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
@@ -11,15 +12,15 @@ import javafx.scene.layout.HBox;
 public class PitListViewCell extends ListCell<Pitannya> {
 
 	@FXML
-	Label nomQue;
+	private Label nomQue;
 	@FXML
-	Label nomPit;
+	private Label nomPit;
 	@FXML
-	Label rozId;
+	private Label rozId;
 	@FXML
-	Label pitan;
+	private Label pitan;
 	@FXML
-	HBox hbox;
+	private HBox hbox;
 	
 	private FXMLLoader mLLoader;
 	
@@ -34,7 +35,7 @@ public class PitListViewCell extends ListCell<Pitannya> {
 
         } else {
             if (mLLoader == null) {
-                mLLoader = new FXMLLoader(getClass().getResource("ListCell.fxml"));
+                mLLoader = new FXMLLoader(getClass().getResource("../fxml/ListCell.fxml"));
                 mLLoader.setController(this);
 
                 try {

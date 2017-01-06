@@ -1,13 +1,12 @@
-package derj.test;
+package derj.test.code;
 
 import java.io.IOException;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 
 import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyCodeCombination;
 import javafx.scene.input.KeyCombination;
@@ -29,7 +28,7 @@ public class MainApp extends Application {
 	public void start(Stage primaryStage) {
 		this.primaryStage = primaryStage;
 		this.primaryStage.setTitle("Конкурс на держслужбу");
-
+		//this.primaryStage.getIcons().add(new Image("../img/AppIcon.png"));
 		initRootLayout();
 
 		showMainView();
@@ -42,7 +41,7 @@ public class MainApp extends Application {
 		try {
 			// ��������� �������� ����� �� fxml �����.
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(MainApp.class.getResource("RootLayout.fxml"));
+			loader.setLocation(MainApp.class.getResource("../fxml/RootLayout.fxml"));
 			rootLayout = (BorderPane) loader.load();
 
 			// ���������� �����, ���������� �������� �����.
@@ -62,7 +61,7 @@ public class MainApp extends Application {
 		try {
 			// ��������� �������� �� ���������.
 			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(MainApp.class.getResource("MainView.fxml"));
+			loader.setLocation(MainApp.class.getResource("../fxml/MainView.fxml"));
 			BorderPane mainV = (BorderPane) loader.load();
 
 			// �������� �������� �� ��������� � ����� ��������� ������.
@@ -106,7 +105,7 @@ public class MainApp extends Application {
 	    try {
 	        // Load the fxml file and create a new stage for the popup dialog.
 	        FXMLLoader loader = new FXMLLoader();
-	        loader.setLocation(MainApp.class.getResource("GoToDialog.fxml"));
+	        loader.setLocation(MainApp.class.getResource("../fxml/GoToDialog.fxml"));
 	        VBox page = (VBox) loader.load();
 	        // Create the dialog Stage.
 	        Stage dialogStage = new Stage();
