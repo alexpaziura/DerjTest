@@ -201,6 +201,8 @@ public class MainViewController implements Initializable {
 			btnFour.setEffect(null);
 			chooseKategory = 1;
 			rozdil = 1;
+			nom_pit = 1;
+            loadQuestion();
 			maxNom = 100;
 			System.out.println(chooseKategory);
 		} else {
@@ -221,7 +223,9 @@ public class MainViewController implements Initializable {
 			btnFour.setEffect(null);
 			chooseKategory = 2;
 			rozdil = 2;
+			nom_pit = 1;
 			maxNom = 100;
+            loadQuestion();
 			System.out.println(chooseKategory);
 		} else {
 			if ((!btnAll.isSelected()) && (!btnFirst.isSelected()) && (!btnThree.isSelected())
@@ -241,7 +245,9 @@ public class MainViewController implements Initializable {
 			btnFour.setEffect(null);
 			chooseKategory = 3;
 			rozdil = 3;
+			nom_pit = 1;
 			maxNom = 100;
+            loadQuestion();
 			System.out.println(chooseKategory);
 		} else {
 			if ((!btnAll.isSelected()) && (!btnFirst.isSelected()) && (!btnTwo.isSelected())
@@ -261,6 +267,8 @@ public class MainViewController implements Initializable {
 			btnThree.setEffect(null);
 			chooseKategory = 4;
 			rozdil = 4;
+			nom_pit = 1;
+            loadQuestion();
 			maxNom = 101;
 			System.out.println(chooseKategory);
 		} else {
@@ -378,9 +386,9 @@ public class MainViewController implements Initializable {
 		boolean okClicked = mainApp.showGoToDialog(temp);
 		if (okClicked) {
 			System.out.println("roz=" + temp.getRoz() + " vop=" + temp.getPit());
+            rozdil = temp.getRoz();
+            nom_pit = temp.getPit();
 		}
-		rozdil = temp.getRoz();
-		nom_pit = temp.getPit();
 		chTab();
 		saveToHistory();
 		loadQuestion();
