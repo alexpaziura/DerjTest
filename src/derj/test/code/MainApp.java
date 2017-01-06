@@ -28,7 +28,7 @@ public class MainApp extends Application {
 	public void start(Stage primaryStage) {
 		this.primaryStage = primaryStage;
 		this.primaryStage.setTitle("Конкурс на держслужбу");
-		//this.primaryStage.getIcons().add(new Image("../img/AppIcon.png"));
+		this.primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("../img/AppIcon.png")));
 		initRootLayout();
 
 		showMainView();
@@ -48,6 +48,7 @@ public class MainApp extends Application {
 			scene = new Scene(rootLayout);
 			primaryStage.setScene(scene);
 			//scene.getStylesheets().add(getClass().getResource("res/css/styles.css").toExternalForm());
+
 			primaryStage.show();
 		} catch (IOException e) {
 			e.printStackTrace();
