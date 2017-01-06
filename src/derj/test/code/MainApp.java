@@ -15,20 +15,20 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 public class MainApp extends Application {
 	private Stage primaryStage;
 	private BorderPane rootLayout;
-	MainViewController cont;
-	Scene scene;
-	final KeyCombination kbNext = new KeyCodeCombination(KeyCode.RIGHT, KeyCombination.CONTROL_DOWN);
-	final KeyCombination kbPrev = new KeyCodeCombination(KeyCode.LEFT, KeyCombination.CONTROL_DOWN);
-	final KeyCombination kbExit = new KeyCodeCombination(KeyCode.Q, KeyCombination.CONTROL_DOWN);
+	private Scene scene;
+	private final KeyCombination kbNext = new KeyCodeCombination(KeyCode.RIGHT, KeyCombination.CONTROL_DOWN);
+	private final KeyCombination kbPrev = new KeyCodeCombination(KeyCode.LEFT, KeyCombination.CONTROL_DOWN);
+	private final KeyCombination kbExit = new KeyCodeCombination(KeyCode.Q, KeyCombination.CONTROL_DOWN);
 	@Override
 	public void start(Stage primaryStage) {
 		this.primaryStage = primaryStage;
 		this.primaryStage.setTitle("Конкурс на держслужбу");
-		this.primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("../img/AppIcon.png")));
+		this.primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("../img/Ukraine-icon2.png")));
 		initRootLayout();
 
 		showMainView();
@@ -37,18 +37,21 @@ public class MainApp extends Application {
 	/**
 	 * �������������� �������� �����.
 	 */
-	public void initRootLayout() {
+	private void initRootLayout() {
 		try {
 			// ��������� �������� ����� �� fxml �����.
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(MainApp.class.getResource("../fxml/RootLayout.fxml"));
-			rootLayout = (BorderPane) loader.load();
+			rootLayout = loader.load();
 
 			// ���������� �����, ���������� �������� �����.
 			scene = new Scene(rootLayout);
+			RootLayoutController controller = loader.getController();
 			primaryStage.setScene(scene);
+			primaryStage.initStyle(StageStyle.UNIFIED);
 			//scene.getStylesheets().add(getClass().getResource("res/css/styles.css").toExternalForm());
-
+			controller.setDialogStage(primaryStage);
+			controller.setMainApp(this);
 			primaryStage.show();
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -58,12 +61,12 @@ public class MainApp extends Application {
 	/**
 	 * ���������� � �������� ������ �������� �� ���������.
 	 */
-	public void showMainView() {
+	private void showMainView() {
 		try {
 			// ��������� �������� �� ���������.
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(MainApp.class.getResource("../fxml/MainView.fxml"));
-			BorderPane mainV = (BorderPane) loader.load();
+			BorderPane mainV = loader.load();
 
 			// �������� �������� �� ��������� � ����� ��������� ������.
 			rootLayout.setCenter(mainV);
@@ -89,30 +92,24 @@ public class MainApp extends Application {
 		}
 	}
 
-	/**
-	 * ���������� ������� �����.
-	 * 
-	 * @return
-	 */
-	public Stage getPrimaryStage() {
-		return primaryStage;
-	}
-
 	public static void main(String[] args) {
 		launch(args);
 	}
 	
-	public boolean showGoToDialog(Tem temp) {
+	boolean showGoToDialog(Tem temp) {
 	    try {
 	        // Load the fxml file and create a new stage for the popup dialog.
 	        FXMLLoader loader = new FXMLLoader();
 	        loader.setLocation(MainApp.class.getResource("../fxml/GoToDialog.fxml"));
-	        VBox page = (VBox) loader.load();
+	        VBox page = loader.load();
 	        // Create the dialog Stage.
 	        Stage dialogStage = new Stage();
 	        dialogStage.setTitle("Перейти на");
 	        dialogStage.initModality(Modality.WINDOW_MODAL);
+			dialogStage.initStyle(StageStyle.UNIFIED);
 	        dialogStage.initOwner(primaryStage);
+			dialogStage.setResizable(false);
+			dialogStage.getIcons().add(new Image(getClass().getResourceAsStream("../img/Ukraine-icon2.png")));
 	        Scene scene = new Scene(page);
 	        dialogStage.setScene(scene);
 
@@ -131,4 +128,37 @@ public class MainApp extends Application {
 	        return false;
 	    }
 	}
+
+	boolean showAboutDialog() {
+		try {
+			// Load the fxml file and create a new stage for the popup dialog.
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(MainApp.class.getResource("../fxml/AboutDialog.fxml"));
+			VBox page = loader.load();
+			// Create the dialog Stage.
+			Stage dialogStage = new Stage();
+			dialogStage.setTitle("Довідка");
+			dialogStage.initModality(Modality.WINDOW_MODAL);
+			dialogStage.initOwner(primaryStage);
+			dialogStage.initStyle(StageStyle.UNIFIED);
+			dialogStage.setResizable(false);
+			dialogStage.getIcons().add(new Image(getClass().getResourceAsStream("../img/Ukraine-icon2.png")));
+			Scene scene = new Scene(page);
+			dialogStage.setScene(scene);
+
+			// Set the person into the controller.
+			AboutDialogController controller = loader.getController();
+			controller.setDialogStage(dialogStage);
+
+
+			// Show the dialog and wait until the user closes it
+			dialogStage.showAndWait();
+			controller.setMainApp(this);
+			return controller.isOkClicked();
+		} catch (IOException e) {
+			e.printStackTrace();
+			return false;
+		}
+	}
+
 }

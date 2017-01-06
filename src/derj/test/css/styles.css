@@ -57,3 +57,24 @@
 #btnEdit {
 	-fx-background-image: url('../img/Pencil-icon.png');
 }
+#btnEmail {
+	-fx-background-image: url('../img/email.png');
+}
+#btnFacebook {
+	-fx-background-image: url('../img/facebook.png');
+}
+#btnGithub {
+	-fx-background-image: url('../img/github.png');
+}
+#btnTwitter {
+	-fx-background-image: url('../img/twitter.png');
+}
+#btnVk {
+	-fx-background-image: url('../img/vk.png');
+}
+#btnGoogle {
+	-fx-background-image: url('../img/googleplus.png');
+}
+#menu {
+    -fx-background-color: #0099ff;
+}
