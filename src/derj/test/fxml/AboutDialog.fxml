@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="TOP_CENTER" prefHeight="368.0" prefWidth="340.0" styleClass="toolbars" stylesheets="@../css/styles.css" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="derj.test.code.AboutDialogController">
+<VBox alignment="TOP_CENTER" prefHeight="395.0" prefWidth="340.0" styleClass="toolbars" stylesheets="@../css/styles.css" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="derj.test.code.AboutDialogController">
    <children>
       <ImageView fx:id="imgApp" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" styleClass="buttons">
          <image>
@@ -42,13 +42,16 @@
             <Insets top="10.0" />
          </VBox.margin>
       </Label>
+      <Label layoutX="56.0" layoutY="233.0" text="alex.paziura@gmail.com">
+         <font>
+            <Font name="Times New Roman Bold" size="19.0" />
+         </font>
+         <VBox.margin>
+            <Insets top="5.0" />
+         </VBox.margin>
+      </Label>
       <HBox alignment="TOP_CENTER" prefWidth="409.0">
          <children>
-            <Button id="btnEmail" fx:id="btnEmail" alignment="TOP_CENTER" mnemonicParsing="false" onAction="#handleEmail" onMousePressed="#clickEmail" onMouseReleased="#offclickEmail" prefHeight="50.0" prefWidth="50.0" styleClass="buttons">
-               <HBox.margin>
-                  <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
-               </HBox.margin>
-            </Button>
             <Button id="btnVk" fx:id="btnVk" alignment="TOP_CENTER" layoutX="190.0" layoutY="10.0" mnemonicParsing="false" onAction="#handleVk" onMousePressed="#clickVk" onMouseReleased="#offclickVk" prefHeight="50.0" prefWidth="50.0" styleClass="buttons">
                <HBox.margin>
                   <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />

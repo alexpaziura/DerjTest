@@ -16,8 +16,7 @@ import java.util.ResourceBundle;
 
 public class AboutDialogController implements Initializable {
 
-    @FXML
-    private Button btnEmail;
+
     @FXML
     private Button btnVk;
     @FXML
@@ -70,26 +69,7 @@ public class AboutDialogController implements Initializable {
     private void offclickOk() {
         btnOk.setEffect(null);
     }
-    @FXML
-    private void handleEmail(){
-        try {
-            Desktop.getDesktop().browse(new URI("mailto:alex.paziura@gmail.com"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (URISyntaxException e) {
-            e.printStackTrace();
-        }
-    }
 
-    @FXML
-    private void clickEmail() {
-        btnEmail.setEffect(is);
-    }
-
-    @FXML
-    private void offclickEmail() {
-        btnEmail.setEffect(null);
-    }
     @FXML
     private void handleVk(){
         try {

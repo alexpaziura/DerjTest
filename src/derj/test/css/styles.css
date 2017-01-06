@@ -57,9 +57,6 @@
 #btnEdit {
 	-fx-background-image: url('../img/Pencil-icon.png');
 }
-#btnEmail {
-	-fx-background-image: url('../img/email.png');
-}
 #btnFacebook {
 	-fx-background-image: url('../img/facebook.png');
 }
@@ -76,5 +73,49 @@
 	-fx-background-image: url('../img/googleplus.png');
 }
 #menu {
-    -fx-background-color: #0099ff;
+    -fx-background-color: #a3b6d1;
+}
+.menu-bar { -fx-background-color: #a3b6d1; }
+.context-menu {
+    -fx-skin: "com.sun.javafx.scene.control.skin.ContextMenuSkin";
+    -fx-background-color: #a3b6d1;
+    -fx-background-insets: 0, 1, 2;
+    -fx-background-radius: 0 6 6 6, 0 5 5 5, 0 4 4 4;
+    -fx-padding: 0.333333em 0.083333em 0.666667em 0.083333em;
+}
+.menu-item .label {
+    -fx-text-fill: white;
+}
+.menu:showing {
+    -fx-background-color: #ffcc00;
+ }
+.menu:showing .label { -fx-text-fill: black; }
+.menu:focused { -fx-background-color: #ffcc00; }
+.menu .label { -fx-text-fill: black;}
+
+.menu-item:focused {
+     -fx-background-color: #ffcc00;
+}
+
+.tab-pane
+{
+-fx-skin: "com.sun.javafx.scene.control.skin.TabPaneSkin";
+/* -fx-tab-min-width: 4.583em;  55 */
+/* -fx-tab-max-width: 4.583em; 55 */
+-fx-tab-min-height: 2em; /* 24 */
+-fx-tab-max-height: 2em; /* 24 */
+
+}
+.tab {
+-fx-background-color: #ffcc00;
+}
+.tab:selected
+{
+   -fx-background-color: #fa8605;
+
+}
+.tab-pane *.tab-header-background
+{
+-fx-background-color: #a3b6d1;
+-fx-effect: innershadow(two-pass-box , rgba(0,0,0,0.6) , 4, 0.0 , 0 , 0);
 }
