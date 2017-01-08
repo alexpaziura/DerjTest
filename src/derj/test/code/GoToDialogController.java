@@ -100,8 +100,8 @@ public class GoToDialogController implements Initializable {
 			// Show the error message.
 			Alert alert = new Alert(AlertType.ERROR);
 			alert.initOwner(dialogStage);
-			alert.setTitle("Invalid Fields");
-			alert.setHeaderText("Please correct invalid fields");
+			alert.setTitle("Некоректне значення");
+			alert.setHeaderText("Будь ласка, виправте некоректне значення!");
 			alert.setContentText(errorMessage);
 
 			alert.showAndWait();
