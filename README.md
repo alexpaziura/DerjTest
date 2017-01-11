@@ -11,6 +11,6 @@ the Ministry of Justice of Ukraine [№ 97 / 1328/5](http://nads.gov.ua/page/per
 
 # Screenshots
 
-![screen1](/screenshots/1.png) ![screen2](/screenshots/2.png)
+![screen1](https://github.com/alexpaziura/DerjTest/raw/master/screenshots/1.png) ![screen2](https://github.com/alexpaziura/DerjTest/raw/master/screenshots/2.png)
 
 
