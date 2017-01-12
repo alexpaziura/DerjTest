@@ -372,7 +372,6 @@ public class MainViewController implements Initializable {
 
 	@FXML
     private void handleBtnEdit() {
-		boolean okClicked = mainApp.showAboutDialog();
         btnEdit.setDisable(true);
         btnEditApply.setVisible(true);
         taQuest.setEditable(true);
@@ -386,6 +385,11 @@ public class MainViewController implements Initializable {
             "WHERE rozdil=" + rozdil + " and nom_pitanya=" + nom_pit+";");
             loadQuestion();
         } catch (SQLException e) {
+			Alert alert = new Alert(AlertType.ERROR);
+			alert.setTitle("Конкурс на держслужбу");
+			alert.setHeaderText(null);
+			alert.setContentText( e.toString());
+			alert.showAndWait();
             e.printStackTrace();
         } finally {
             btnEdit.setDisable(false);

@@ -28,7 +28,7 @@ public class MainApp extends Application {
 	public void start(Stage primaryStage) {
 		this.primaryStage = primaryStage;
 		this.primaryStage.setTitle("Конкурс на держслужбу");
-		this.primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("../img/Ukraine-icon2.png")));
+		//this.primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("../img/Ukraine-icon2.png")));
 		initRootLayout();
 
 		showMainView();
@@ -109,7 +109,7 @@ public class MainApp extends Application {
 			dialogStage.initStyle(StageStyle.UNIFIED);
 	        dialogStage.initOwner(primaryStage);
 			dialogStage.setResizable(false);
-			dialogStage.getIcons().add(new Image(getClass().getResourceAsStream("../img/Ukraine-icon2.png")));
+			//dialogStage.getIcons().add(new Image(getClass().getResourceAsStream("../img/Ukraine-icon2.png")));
 	        Scene scene = new Scene(page);
 	        dialogStage.setScene(scene);
 
@@ -142,7 +142,7 @@ public class MainApp extends Application {
 			dialogStage.initOwner(primaryStage);
 			dialogStage.initStyle(StageStyle.UNIFIED);
 			dialogStage.setResizable(false);
-			dialogStage.getIcons().add(new Image(getClass().getResourceAsStream("../img/Ukraine-icon2.png")));
+			//dialogStage.getIcons().add(new Image(getClass().getResourceAsStream("../img/Ukraine-icon2.png")));
 			Scene scene = new Scene(page);
 			dialogStage.setScene(scene);
 

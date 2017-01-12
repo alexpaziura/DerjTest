@@ -23,7 +23,11 @@
     <autoscroll-to-editor value="false" />
     <autoscroll-from-editor value="true" />
     <show-object-properties value="true" />
-    <loaded-nodes />
+    <loaded-nodes>
+      <connection connection-id="8d53cc11-b342-4709-a5e4-35c64f9ce458">
+        <schema name="main" object-types="column, constraint, index, table, dataset trigger, view" />
+      </connection>
+    </loaded-nodes>
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="8d53cc11-b342-4709-a5e4-35c64f9ce458">
@@ -31,7 +35,7 @@
     </connection>
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
-    <filter-list connection-id="8d53cc11-b342-4709-a5e4-35c64f9ce458" dataset="main.test" active-filter-id="">
+    <filter-list connection-id="8d53cc11-b342-4709-a5e4-35c64f9ce458" dataset="main.test" active-filter-id="EMPTY_FILTER">
       <filter id="38d4834d-39fc-4545-9280-033105964b63" name="Filter 1" temporary="false" custom-name="false" type="basic" join-type="AND">
         <condition column="id" operator="=" value="" active="true" />
       </filter>
@@ -75,7 +79,7 @@
           <port value="" />
           <database value="" />
           <files>
-            <file path="D:\IdeaProjects\DerjTest\res\bd\question.sqlite" schema="main" />
+            <file path="D:\IdeaProjects\DerjTest\bd\question.sqlite" schema="main" />
           </files>
           <os-authentication value="false" />
           <empty-password value="false" />
